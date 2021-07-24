@@ -1,2 +1,1 @@
-# freeCodeCamp-Scientific-Computing-with-Python-Projects
-My solution
+![Image](https://i.imgur.com/uBRdw11.png)
