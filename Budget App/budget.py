@@ -70,9 +70,9 @@ def create_spend_chart(class_list):
             else:
                 string += "   "
         now_percentage -= 10
-        string += "\n"
+        string += '\n'
 
-    string += "    -" + (len(withdraw_percentage) * "---") + "\n"
+    string += "    -" + (len(withdraw_percentage) * "---") + '\n'
     
     for name_len in range(class_name_maxlen):
         string += "     "
@@ -83,6 +83,6 @@ def create_spend_chart(class_list):
                 string += "   "
         if(name_len == class_name_maxlen-1):
           break
-        string += "\n"
+        string += '\n'
         
     return string
