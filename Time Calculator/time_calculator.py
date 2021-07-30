@@ -30,7 +30,7 @@ def add_time(start, duration, day = None):
         duration_day = duration_day + 1
         new_time_hour = new_time_hour - 24
       
-    while(new_time_hour > 12):
+    if(new_time_hour > 12):
         if(am_pm == "AM"):
             am_pm = "PM"
         else:
