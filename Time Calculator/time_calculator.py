@@ -48,7 +48,6 @@ def add_time(start, duration, day = None):
     if day != None:
         new_day = list(day_dict.keys())[list(day_dict.values()).index((day_dict.get(day.lower()) + duration_day) % 7)]
         new_time = str(new_time_hour) + ':' + padding + str(new_time_minute) + " " + am_pm + ", " + new_day[0].upper() + new_day[1:]
-      
     else:  
         new_time = str(new_time_hour) + ':' + padding + str(new_time_minute) + " " + am_pm
 
