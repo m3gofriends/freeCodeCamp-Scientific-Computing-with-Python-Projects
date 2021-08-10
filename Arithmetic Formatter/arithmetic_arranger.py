@@ -4,10 +4,7 @@ def arithmetic_arranger(problem_list, show_answer = False):
         return "Error: Too many problems."
 
     string = ""
-    problem_maxlen = []
-    first_row = []
-    sign = []
-    second_row = []
+    problem_maxlen, first_row, sign, second_row = [], [], [], []
 
     for maxlen in range(len(problem_list)):
         temp = problem_list[maxlen].split()
@@ -26,33 +23,33 @@ def arithmetic_arranger(problem_list, show_answer = False):
         second_row.append(temp[2])
         problem_maxlen.append(max(len(temp[0]), len(temp[2])))
 
-    string = string + "  "
+    string += "  "
     for index in range(len(problem_list)):
         if(index != len(problem_list) - 1):
-            string = string + (problem_maxlen[index] - len(first_row[index])) * " " + first_row[index] + "      "
+            string += (problem_maxlen[index] - len(first_row[index])) * " " + first_row[index] + "      "
         else:
-            string = string +  (problem_maxlen[index] - len(first_row[index])) * " " + first_row[index] + "\n"
+            string += (problem_maxlen[index] - len(first_row[index])) * " " + first_row[index] + "\n"
       
     for index in range(len(problem_list)):
         if(index != len(problem_list) - 1):
-            string = string +  sign[index] + " " + (problem_maxlen[index] - len(second_row[index])) * " " + second_row[index] + "    "
+            string += sign[index] + " " + (problem_maxlen[index] - len(second_row[index])) * " " + second_row[index] + "    "
         else:
-            string = string +  sign[index] + " " + (problem_maxlen[index] - len(second_row[index])) * " " + second_row[index] + "\n"
+            string += sign[index] + " " + (problem_maxlen[index] - len(second_row[index])) * " " + second_row[index] + "\n"
 
     for index in range(len(problem_list)):
         if(index != len(problem_list) - 1):
-            string = string +  "--" + problem_maxlen[index] * '-' + "    "
+            string += "--" + problem_maxlen[index] * '-' + "    "
         else:
             if show_answer == False:
-                string = string +  "--" + problem_maxlen[index] * '-'
+                string += "--" + problem_maxlen[index] * '-'
             else:
-                string = string +  "--" + problem_maxlen[index] * '-' + "\n"
+                string += "--" + problem_maxlen[index] * '-' + "\n"
 
     if show_answer == True:
         for index in range(len(problem_list) ):
             if(index != len(problem_list) - 1):
-                string = string +  (2 + problem_maxlen[index] - len(str(eval(problem_list[index])))) * " " + str(eval(problem_list[index])) + "    "
+                string += (2 + problem_maxlen[index] - len(str(eval(problem_list[index])))) * " " + str(eval(problem_list[index])) + "    "
             else:
-                string = string +  (2 + problem_maxlen[index] - len(str(eval(problem_list[index])))) * " " + str(eval(problem_list[index]))
+                string += (2 + problem_maxlen[index] - len(str(eval(problem_list[index])))) * " " + str(eval(problem_list[index]))
 
     return string
