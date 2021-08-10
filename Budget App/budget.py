@@ -20,14 +20,14 @@ class Category:
 
     def deposit(self, deposit_money, deposit_description = ""):
         self.ledger.append({"amount": deposit_money, "description": deposit_description})
-        self.money = self.money + deposit_money
+        self.money += deposit_money
         self.deposit_description = deposit_description
 
     def withdraw(self, withdraw_money, withdraw_description = ""):
         if(self.money < withdraw_money):
             return False
         self.ledger.append({"amount": -withdraw_money, "description": withdraw_description})
-        self.money = self.money - withdraw_money
+        self.money -= withdraw_money
         self.withdraw_description = withdraw_description
         self.withdraw_total += withdraw_money
         return True
