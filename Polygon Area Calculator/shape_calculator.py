@@ -20,7 +20,7 @@ class Rectangle:
         return 2 * (self.width + self.height)
 
     def get_diagonal(self):
-        return (self.width ** 2 + self.height ** 2) ** .5
+        return (self.width ** 2 + self.height ** 2) ** 0.5
 
     def get_picture(self):
         if(self.width > 50 or self.height > 50):
@@ -53,16 +53,16 @@ class Square(Rectangle):
         self.length = length
 
     def get_area(self):
-        return self.length * self.length
+        return self.length ** 2
 
     def get_perimeter(self):
-        return 2 * (self.length + self.length)
+        return 4 * self.length
 
     def get_diagonal(self):
-        return (self.length ** 2 + self.length ** 2) ** .5
+        return (2 * self.length ** 2) ** 0.5
 
     def get_picture(self):
-        if(self.length > 50 or self.length > 50):
+        if(self.length > 50):
             return "Too big for picture."
         string = ""
         for i in range(self.length):
